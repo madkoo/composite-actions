@@ -17,12 +17,12 @@ jobs:
     build:
         runs-on: ubuntu-latest
         steps:
-        - uses: actions/checkout@v3
+        - uses: actions/checkout@v4
         
        # setup node and cache node modules
-        - uses: actions/setup-node@v2
+        - uses: actions/setup-node@v4.1.0
           with:
-            node-version: '16'
+            node-version: '20'
             cache: 'npm'
         - name: Install dependencies
           run: npm ci
@@ -30,7 +30,7 @@ jobs:
         - name: Build
           run: npm run all
         
-        - uses: actions/upload-artifact@v2
+        - uses: actions/upload-artifact@v4
           with:
             name: dist
             path: dist
@@ -41,7 +41,7 @@ jobs:
             path: main
             token: ${{ secrets.REPO_TOKEN }}
 
-        - uses: actions/download-artifact@v2
+        - uses: actions/download-artifact@v4
           with:
             name: dist
             path: main/dist

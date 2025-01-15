@@ -1,6 +1,10 @@
 name: 'Set repository permissions'
 description: 'A action used to set user or team permissions for repositories'
 author: 'Madis Koosaar'
+branding:
+  color: "yellow"
+  icon: 'action'
+  
 inputs:
   token: 
     description:  "GitHub PAT token"
@@ -26,5 +30,5 @@ inputs:
     required: true
 
 runs:
-  using: 'node16'
+  using: 'node20'
   main: 'dist/index.js'

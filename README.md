@@ -8,7 +8,7 @@ This composite action enables to update permissions for Teams or users in a sing
 
 ```yaml
 
-- uses: madkoo/set-repo-permissions@v1
+- uses: madkoo/set-repo-permissions@v2
   with:
     token: ${{ secrets.GITHUB_TOKEN }}
     target-org: "Target organization name where repositories are located" 
